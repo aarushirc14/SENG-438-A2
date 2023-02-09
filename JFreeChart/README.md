@@ -1,2 +1,0 @@
-## SENG 438 A2 GROUP 6
-
