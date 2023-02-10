@@ -11,6 +11,16 @@ import java.util.ArrayList;
 
 //Author: Jonathan 
 
+// public static KeyedValues getCumulativePercentages(KeyedValues data)
+// Returns a KeyedValues instance that contains the cumulative percentage values for the data in another KeyedValues instance. The cumulative percentage is each value's 
+// cumulative sum's portion of the sum of all the values.
+// Parameters:
+//  data - the data (null not permitted).
+// Returns:
+//  The cumulative percentages.
+// Throws:
+//  InvalidParameterException - if invalid data object is passed in.
+
 public class DataUtilities_CumulativePercentages_Tests {
 
 	private KeyedValues values;
@@ -60,6 +70,8 @@ public class DataUtilities_CumulativePercentages_Tests {
 	        }
 	    });
     }
+
+
 
 
 
