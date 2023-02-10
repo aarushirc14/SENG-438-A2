@@ -63,19 +63,6 @@ public class DataUtilities_CumulativePercentages_Tests {
 
 
 
-// ==================================================================== calculateColumnTotal ============================================================================
-
-// public static KeyedValues getCumulativePercentages(KeyedValues data)
-// Returns a KeyedValues instance that contains the cumulative percentage values for the data in another KeyedValues instance. The cumulative percentage is each value's 
-// cumulative sum's portion of the sum of all the values.
-// Parameters:
-//  data - the data (null not permitted).
-// Returns:
-//  The cumulative percentages.
-// Throws:
-//  InvalidParameterException - if invalid data object is passed in.
-
-
 	//This test is for verifying the cumulative average found is accurate and between 0:1 for the first value. Expected sum is 0.3125 (5/16)
 	@Test 
    	public void getCumulativePercentages_firstValue() {
