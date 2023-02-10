@@ -74,12 +74,17 @@ public class DataUtilities_CumulativePercentages_Tests {
 
 
 
+	//This test is for verifying the cumulative average object has the same keys as the one passed in.
+	@Test 
+   	public void getCumulativePercentages_checkKeys() {
+    	KeyedValues result = DataUtilities.getCumulativePercentages(values);
+    	assertEquals("Resulting keys is", result.getKeys(), values.getKeys());
+    }
 
 	//This test is for verifying the cumulative average found is accurate and between 0:1 for the first value. Expected sum is 0.3125 (5/16)
 	@Test 
    	public void getCumulativePercentages_firstValue() {
     	KeyedValues result = DataUtilities.getCumulativePercentages(values);
-    	assertEquals("Resulting keys is", result.getKeys(), values.getKeys());
 		assertEquals("Cumulative percentage for element 0 is", 0.3125, result.getValue(result.getKey(0)));
     }
 
@@ -87,7 +92,6 @@ public class DataUtilities_CumulativePercentages_Tests {
 	@Test
    	public void getCumulativePercentages_lastValue() {
     	KeyedValues result = DataUtilities.getCumulativePercentages(values);
-    	assertEquals("Resulting keys is", result.getKeys(), values.getKeys());
 		assertEquals("Cumulative percentage for element 0 is", 1.0, result.getValue(result.getKey(result.getKeys().size()-1)));
     }
 	
