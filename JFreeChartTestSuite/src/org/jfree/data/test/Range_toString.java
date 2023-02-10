@@ -6,7 +6,7 @@ import org.jfree.data.Range;
 
 import org.junit.*;
 
-public class RangeTest {
+public class Range_toString {
     private Range exampleRange;
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
