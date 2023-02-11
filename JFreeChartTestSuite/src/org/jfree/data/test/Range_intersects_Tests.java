@@ -36,6 +36,9 @@ public class Range_intersects_Tests {
             // Given   :      -2   0
             {-2, 0, true}, 
             // Original:        -1   1
+            // Given   :        -1 0
+            {-1, 0, true}, 
+            // Original:        -1   1
             // Given   :      -2       2
             {-2, 2, true}, 
             // Original: -1   1
@@ -44,6 +47,9 @@ public class Range_intersects_Tests {
             // Original: -1   1
             // Given   :    0   2
             {0, 2, true}, 
+            // Original: -1   1
+            // Given   :    0 1
+            {0, 1, true}, 
             // Original: -1          1
             // Given   :   -0.5, 0.5
             {-0.5, 0.5, true},
@@ -61,13 +67,13 @@ public class Range_intersects_Tests {
     }
 
     @Test
-    public void rangeShouldBeEqual() {
+    public void rangesShouldIntersect() {
         Assume.assumeTrue(isTrue);
         assertTrue("Ranges should intersect", exampleRange.intersects(x1, y1));
     }
 
     @Test
-    public void rangeShouldNotBeEqual() {
+    public void rangesShouldNotIntersect() {
         Assume.assumeTrue(!isTrue);
         assertFalse("Ranges should not intersect", exampleRange.intersects(x1, y1));
     }
