@@ -6,14 +6,23 @@ import org.jfree.data.Range;
 
 import org.junit.*;
 
-public class Range_toString {
-    private Range exampleRange;
-    @BeforeClass public static void setUpBeforeClass() throws Exception {
-    }
+public class RangeTest {
+	    private Range exampleRange;
+	    private Range exampleRange2;
+	    private Range exampleRange3;
+	    private Range exampleRange4;
+	    
+	    @BeforeClass public static void setUpBeforeClass() throws Exception {
+	    }
 
 
     @Before
-    public void setUp() throws Exception { exampleRange = new Range(-1, 1);
+    public void setUp() throws Exception { 
+    	exampleRange = new Range(-1.0, 1.0);
+    	exampleRange2 = new Range(5.0, 10.0);
+    	exampleRange3 = new Range(-10.0, -5.0);
+    	exampleRange4 = new Range(-10.0, 10.0);
+ 
     }
 
 
@@ -25,30 +34,32 @@ public class Range_toString {
     
 
     @Test
-    public void testZeroPositive() {
+    public void testBaseCase() {
         assertEquals("A String \"Range[lower,upper]\" where lower=lower range and upper=upper range.",
-        "0.0,1.0", exampleRange.toString());
+        "Range[-1.0,1.0]", exampleRange.toString());
         System.out.println(exampleRange.toString());
-    }
-    @Test
-    public void edgecaseNegativePositive() {
-    	assertEquals("A String \"Range[lower,upper]\" where lower=lower range and upper=upper range.",
-    	"-2.0,3.0", exampleRange.toString());
-    	System.out.println(exampleRange.toString());
-    }
-    @Test
-    public void edgecaseNegativeNegative() {
-    	assertEquals("A String \"Range[lower,upper]\" where lower=lower range and upper=upper range.",
-    	"-2.0,-3.0", exampleRange.toString());
-    	System.out.println(exampleRange.toString());
     }
     @Test
     public void edgecasePositivePositive() {
     	assertEquals("A String \"Range[lower,upper]\" where lower=lower range and upper=upper range.",
-    	"2.0,3.0", exampleRange.toString());
-    	System.out.println(exampleRange.toString());
+    	"Range[5.0,10.0]", exampleRange2.toString());
+    	System.out.println(exampleRange2.toString());
+    }
+    @Test
+    public void edgecaseNegativeNegative() {
+    	assertEquals("A String \"Range[lower,upper]\" where lower=lower range and upper=upper range.",
+    	"Range[-10.0, -5.0]", exampleRange3.toString());
+    	System.out.println(exampleRange3.toString());
+    }
+    @Test
+    public void edgecaseNegativePositive() {
+    	assertEquals("A String \"Range[lower,upper]\" where lower=lower range and upper=upper range.",
+    	"Range[-10.0, 10.0]", exampleRange4.toString());
+    	System.out.println(exampleRange4.toString());
     }
 
+    
+    
     @After
     public void tearDown() throws Exception {
     }
