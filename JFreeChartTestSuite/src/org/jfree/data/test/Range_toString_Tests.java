@@ -6,7 +6,7 @@ import org.jfree.data.Range;
 
 import org.junit.*;
 
-public class RangeTest {
+public class Range_toString_Tests {
 	    private Range exampleRange;
 	    private Range exampleRange2;
 	    private Range exampleRange3;
