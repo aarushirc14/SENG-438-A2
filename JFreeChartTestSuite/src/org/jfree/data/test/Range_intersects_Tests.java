@@ -77,4 +77,10 @@ public class Range_intersects_Tests {
         Assume.assumeTrue(!isTrue);
         assertFalse("Ranges should not intersect", exampleRange.intersects(x1, y1));
     }
+
+    @Test
+    public void rangesIntersectWithObject() {
+        Range toCompare = new Range(-1, 1);
+        assertTrue("Ranges intersect", exampleRange.intersects(toCompare));
+    }
 }
